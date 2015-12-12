@@ -1,7 +1,7 @@
 <?php
 namespace infrajs\crumb;
 use infrajs\controller\Controller;
-use infrajs\controller\Each;
+use infrajs\infra\Each;
 use infrajs\controller\Run;
 use infrajs\controller\Layer;
 use infrajs\path\Path;
@@ -9,9 +9,9 @@ use infrajs\event\Event;
 use infrajs\sequence\Sequence;
 use infrajs\template\Template;
 use infrajs\controller\External;
+use infrajs\infra\Infra;
 
-
-Path::req('*controller/infra.php');
+Infra::req('controller');
 
 Event::handler('layer.ischeck', function ($layer) {
 	$deep = (int) $layer['deep'];
