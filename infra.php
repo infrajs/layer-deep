@@ -9,9 +9,9 @@ use infrajs\event\Event;
 use infrajs\sequence\Sequence;
 use infrajs\template\Template;
 use infrajs\controller\External;
-use infrajs\infra\Infra;
+use infrajs\infra\Config;
 
-Infra::req('controller');
+Config::get('controller');
 
 Event::handler('layer.ischeck', function ($layer) {
 	$deep = (int) $layer['deep'];
