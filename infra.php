@@ -1,7 +1,7 @@
 <?php
 namespace infrajs\crumb;
 use infrajs\controller\Controller;
-use infrajs\infra\Each;
+use infrajs\each\Each;
 use infrajs\controller\Run;
 use infrajs\controller\Layer;
 use infrajs\path\Path;
@@ -9,7 +9,7 @@ use infrajs\event\Event;
 use infrajs\sequence\Sequence;
 use infrajs\template\Template;
 use infrajs\controller\External;
-use infrajs\infra\Config;
+use infrajs\config\Config;
 
 Config::get('controller');
 
