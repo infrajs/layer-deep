@@ -11,19 +11,15 @@ use infrajs\template\Template;
 use infrajs\controller\External;
 use infrajs\config\Config;
 
-Config::get('controller');
-
 Event::handler('layer.ischeck', function ($layer) {
 	$deep = (int) $layer['deep'];
-	if (!$deep) {
-		return;
-	}
+	if (!$deep) return;
 	$state = &$layer['crumb'];
 	while ($deep && $state->child) {
-		--$deep;
+		$deep--;
 		$state = &$state->child;
 	}
-	if (is_null($state->obj) || $deep) {
+	if ($deep) {
 		return false;
 	}
 });
