@@ -1,7 +1,6 @@
 <?php
 use infrajs\event\Event;
-
-Event::handler('layer.ischeck', function ($layer) {
+Event::handler('Layer.ischeck', function ($layer) {
 	if(!isset($layer['deep'])) return;
 	$deep = (int) $layer['deep'];
 	if (!$deep) return;
@@ -14,5 +13,4 @@ Event::handler('layer.ischeck', function ($layer) {
 		$layer['is_save_branch'] = false;
 		return false;
 	}
-	
 }, 'deep:div');
